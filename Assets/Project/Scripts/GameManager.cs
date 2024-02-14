@@ -1,4 +1,4 @@
-using Connect.Common;
+using Connect.Generator;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -125,7 +125,7 @@ namespace Connect.Core
 
         public void GoToMainMenu()
         {
-            UnityEngine.SceneManagement.SceneManager.LoadScene(MainMenu);
+            UnityEngine.SceneManagement.SceneManager.LoadScene(GameMenuStrings.MainMenu);
         }
 
         public void GoToGameplay()

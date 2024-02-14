@@ -1,7 +1,8 @@
-using Connect.Common;
+using Connect.Generator;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace Connect.Core
 {
@@ -25,8 +26,7 @@ namespace Connect.Core
             hasGameFinished = false;
             _winText.SetActive(false);
             _titleText.gameObject.SetActive(true);
-            _titleText.text = GameManager.Instance.StageName + 
-                " - " + GameManager.Instance.CurrentLevel.ToString();
+            _titleText.text = "Level "+SceneManager.GetActiveScene().buildIndex.ToString();
 
             CurrentLevelData = GameManager.Instance.GetLevel();
 

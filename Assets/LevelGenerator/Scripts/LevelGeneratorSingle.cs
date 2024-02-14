@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Connect.Common;
+using Connect.Generator;
 using TMPro;
 
 namespace Connect.Generator
