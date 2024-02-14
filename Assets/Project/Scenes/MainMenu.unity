@@ -452,13 +452,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1713335228}
-        m_TargetAssemblyTypeName: Connect.Core.GameManager, Assembly-CSharp
-        m_MethodName: OnPlayButtonClicked
+      - m_Target: {fileID: 1713335226}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgumentAssemblyTypeName: 
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -672,9 +672,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7ea4eb26ad975440a7d190ede1fef19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  menus:
-  - {fileID: 2125142914}
-  - {fileID: 6086924871587327805}
 --- !u!1 &1240027082
 GameObject:
   m_ObjectHideFlags: 0
@@ -1358,7 +1355,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8cd26d2c21ef877468415ae128bbf02f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _effectSource: {fileID: 1638736370}
 --- !u!1 &1694578243
 GameObject:
   m_ObjectHideFlags: 0
@@ -1536,11 +1532,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 470bf0bc59e8aff4a80fb15ec600905a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CurrentStage: 0
-  CurrentLevel: 0
-  StageName: 
-  DefaultLevel: {fileID: 11400000, guid: 752b7fae5bf061e45ab62c401a7a39ef, type: 2}
-  _allLevels: {fileID: 11400000, guid: 0c42c6ab4e819f74a8685ba2109401ed, type: 2}
 --- !u!1 &1795252074
 GameObject:
   m_ObjectHideFlags: 0
@@ -1789,12 +1780,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bacba33787d3eaa46a46e5af3dc7ab8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _titlePanel: {fileID: 2125142912}
-  _stagePanel: {fileID: 0}
-  _levelPanel: {fileID: 0}
-  CurrentColor: {r: 0, g: 0, b: 0, a: 0}
-  _levelTitleText: {fileID: 0}
-  _levelTitleImage: {fileID: 0}
 --- !u!1 &2125142912
 GameObject:
   m_ObjectHideFlags: 0
@@ -1847,8 +1832,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ff8cfd58f6453540bbe469305a07af4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MenuName: StartMenu
-  IsOpen: 1
 --- !u!1 &36893055761775629
 GameObject:
   m_ObjectHideFlags: 0
@@ -3879,8 +3862,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ff8cfd58f6453540bbe469305a07af4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MenuName: LevelMenu
-  IsOpen: 0
 --- !u!224 &6091494087645325992
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4115,7 +4096,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8bf6d34778776245adad1cdd2a6fd28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LevelButtons: {fileID: 8319642072825378257}
 --- !u!222 &6576559553845722550
 CanvasRenderer:
   m_ObjectHideFlags: 0
