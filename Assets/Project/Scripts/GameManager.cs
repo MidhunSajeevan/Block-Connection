@@ -114,7 +114,7 @@ namespace Connect.Core
 
         public LevelData GetLevel()
         {
-            string levelName = "Level1"+PlayerPrefs.GetInt("LastOpenedLevel");
+            string levelName = "Level"+PlayerPrefs.GetInt("LastOpenedLevel");
 
             if (Levels.ContainsKey(levelName))
             {
@@ -131,7 +131,7 @@ namespace Connect.Core
         public void GoToGameplay()
         {
              currentLevel++;
-            PlayerPrefs.SetInt("LastOpenedLevel", SceneManager.GetActiveScene().buildIndex + 1);
+            PlayerPrefs.SetInt("LastOpenedLevel", currentLevel);
             SceneManager.LoadScene(GameMenuStrings.AllLevel + 1.ToString());
         }
 
@@ -148,13 +148,7 @@ namespace Connect.Core
             Time.timeScale = 1f;
             SceneManager.LoadScene(GameMenuStrings.AllLevel+PlayerPrefs.GetInt("LastOpenedLevel").ToString());
         }
-        public void LoadNextScene(int scene)
-        {
-            //currentLevel = scene;
-            //PlayerPrefs.SetInt("LastOpenedLevel", currentLevel);
-            //PlayerPrefs.Save();
-            //SceneManager.LoadScene(GameMenuStrings.AllLevel + 1.ToString());
-        }
+      
         #endregion
     }
 }

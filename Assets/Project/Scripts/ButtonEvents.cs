@@ -17,4 +17,8 @@ public class ButtonEvents : MonoBehaviour
         PlayerPrefs.Save();
         SceneManager.LoadScene(GameMenuStrings.AllLevel + 1.ToString());
     }
+    public void OnQuitButtonClicked()
+    {
+        Application.Quit();
+    }
 }

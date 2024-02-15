@@ -18,6 +18,7 @@ namespace Connect.Core
         [SerializeField] private TMP_Text tittleText;
         [SerializeField] private GameObject winText;
         [SerializeField] private SpriteRenderer ClickHighLight;
+        
 
         private void Awake()
         {
@@ -26,10 +27,9 @@ namespace Connect.Core
             hasGameFinished = false;
             winText.SetActive(false);
             tittleText.gameObject.SetActive(true);
-            tittleText.text = "Level "+SceneManager.GetActiveScene().buildIndex.ToString();
 
             CurrentLevelData = GameManager.Instance.GetLevel();
-
+            tittleText.text = CurrentLevelData.name;
             SpawnBoard();
 
             SpawnNodes();
