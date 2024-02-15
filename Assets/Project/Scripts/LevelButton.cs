@@ -35,7 +35,7 @@ namespace Connect.Core
             string[]parts = gameObjectName.Split('_');
             _levelText.text = parts[parts.Length - 1];
             currentLevel = int.Parse(_levelText.text);
-            isLevelUnlocked = GameManager.Instance.IsLevelUnlocked(currentLevel);
+     
 
             _image.color = isLevelUnlocked ? MainMenuManager.Instance.CurrentColor : _inactiveColor;
         }

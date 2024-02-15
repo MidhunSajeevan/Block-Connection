@@ -1,8 +1,7 @@
-using Connect.Generator;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using UnityEngine.SceneManagement;
+
 
 namespace Connect.Core
 {
@@ -242,7 +241,7 @@ namespace Connect.Core
                 }
             }
 
-            GameManager.Instance.UnlockLevel();
+     
 
             winText.gameObject.SetActive(true);
             ClickHighLight.gameObject.SetActive(false);

@@ -59,6 +59,6 @@ namespace Connect.Core
             _levelTitleImage.color = CurrentColor;
             LevelOpened?.Invoke();
         }
-    } 
+    }
 }
 

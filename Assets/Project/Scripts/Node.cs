@@ -99,14 +99,13 @@ namespace Connect.Core
 
         public void UpdateInput(Node connectedNode)
         {
-            //Invalid Input
+            //If Invalid Input then return
             if(!ConnectedEdges.ContainsKey(connectedNode))
             {
                 return;
             }
 
-            //Connected Node already exist
-            //Delete the Edge and the parts
+            //Connected Node already exist Delete the Edge and the parts
             if(ConnectedNodes.Contains(connectedNode))
             {
                 ConnectedNodes.Remove(connectedNode);
