@@ -15,18 +15,18 @@ namespace Connect.Core
 
         [HideInInspector] public bool hasGameFinished;
 
-        [SerializeField] private TMP_Text _titleText;
-        [SerializeField] private GameObject _winText;
-        [SerializeField] private SpriteRenderer _clickHighlight;
+        [SerializeField] private TMP_Text tittleText;
+        [SerializeField] private GameObject winText;
+        [SerializeField] private SpriteRenderer ClickHighLight;
 
         private void Awake()
         {
             Instance = this;
 
             hasGameFinished = false;
-            _winText.SetActive(false);
-            _titleText.gameObject.SetActive(true);
-            _titleText.text = "Level "+SceneManager.GetActiveScene().buildIndex.ToString();
+            winText.SetActive(false);
+            tittleText.gameObject.SetActive(true);
+            tittleText.text = "Level "+SceneManager.GetActiveScene().buildIndex.ToString();
 
             CurrentLevelData = GameManager.Instance.GetLevel();
 
@@ -63,9 +63,9 @@ namespace Connect.Core
             Camera.main.orthographicSize = currentLevelSize + 2f;
             Camera.main.transform.position = new Vector3(currentLevelSize/2f,currentLevelSize/2f,-10f);
 
-            _clickHighlight.size = new Vector2(currentLevelSize/4f,currentLevelSize/4f);
-            _clickHighlight.transform.position = Vector3.zero;
-            _clickHighlight.gameObject.SetActive(false);
+            ClickHighLight.size = new Vector2(currentLevelSize/4f,currentLevelSize/4f);
+            ClickHighLight.transform.position = Vector3.zero;
+            ClickHighLight.gameObject.SetActive(false);
         }
         
         #endregion
@@ -186,15 +186,15 @@ namespace Connect.Core
                         && tNode.IsClickable)
                     {
                         startNode = tNode;
-                        _clickHighlight.gameObject.SetActive(true);
-                        _clickHighlight.gameObject.transform.position =(Vector3)mousePos2D;
-                        _clickHighlight.color = GetHighLightColor(tNode.colorId);
+                        ClickHighLight.gameObject.SetActive(true);
+                        ClickHighLight.gameObject.transform.position =(Vector3)mousePos2D;
+                        ClickHighLight.color = GetHighLightColor(tNode.colorId);
                     }
 
                     return;
                 }
 
-                _clickHighlight.gameObject.transform.position = (Vector3)mousePos2D;
+                ClickHighLight.gameObject.transform.position = (Vector3)mousePos2D;
 
                 if(hit && hit.collider.gameObject.TryGetComponent(out Node tempNode) 
                     && startNode != tempNode)
@@ -215,7 +215,7 @@ namespace Connect.Core
             if(Input.GetMouseButtonUp(0))
             {
                 startNode = null;
-                _clickHighlight.gameObject.SetActive(false);
+                ClickHighLight.gameObject.SetActive(false);
             }
 
         }
@@ -244,8 +244,8 @@ namespace Connect.Core
 
             GameManager.Instance.UnlockLevel();
 
-            _winText.gameObject.SetActive(true);
-            _clickHighlight.gameObject.SetActive(false);
+            winText.gameObject.SetActive(true);
+            ClickHighLight.gameObject.SetActive(false);
 
             hasGameFinished = true;
         }
@@ -256,7 +256,7 @@ namespace Connect.Core
 
         public void ClickedBack()
         {
-            GameManager.Instance.GoToMainMenu();
+            GameManager.Instance.OnMainMenuButtonClicked();
         }
 
         public void ClickedRestart()
@@ -269,6 +269,10 @@ namespace Connect.Core
             if (!hasGameFinished) return;
             
             GameManager.Instance.GoToGameplay();
+        }
+        public void OnQuitButtonClicked()
+        {
+            Application.Quit();
         }
 
         #endregion

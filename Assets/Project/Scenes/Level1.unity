@@ -367,7 +367,7 @@ GameObject:
   - component: {fileID: 690349418}
   - component: {fileID: 690349417}
   m_Layer: 5
-  m_Name: Button
+  m_Name: connectToOnline
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -389,7 +389,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 280.1671, y: -100}
+  m_AnchoredPosition: {x: 382.54712, y: -100}
   m_SizeDelta: {x: 200, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &690349417
@@ -431,7 +431,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 690349418}
   m_OnClick:
     m_PersistentCalls:
@@ -688,18 +688,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hasGameFinished: 0
-  _titleText: {fileID: 1132921857}
-  _winText: {fileID: 1403350403}
-  _clickHighlight: {fileID: 1238708598}
+  tittleText: {fileID: 1132921857}
+  winText: {fileID: 1403350403}
+  ClickHighLight: {fileID: 1238708598}
   _boardPrefab: {fileID: 2336236266812617353, guid: d041698b8801a2140850c713f53f4d7e, type: 3}
   _bgCellPrefab: {fileID: 4868279087156050791, guid: 32f4244f904678a4bbc7172fd6d65ace, type: 3}
   _nodePrefab: {fileID: 2703563055490346233, guid: 172299688f6a7d84fa739942f3d053a1, type: 3}
   NodeColors:
   - {r: 0.9215687, g: 0.19607845, b: 0.13725491, a: 1}
-  - {r: 0.94117653, g: 0.5137255, b: 0.19607845, a: 1}
+  - {r: 0.16661179, g: 1, b: 0, a: 1}
   - {r: 0, g: 0.16078432, b: 0.9607844, a: 1}
-  - {r: 0.21960786, g: 0.49803925, b: 0.13333334, a: 1}
-  - {r: 0.94117653, g: 0.9294118, b: 0.30980393, a: 1}
+  - {r: 1, g: 0.55672055, b: 0, a: 1}
+  - {r: 0.627451, g: 0.1254902, b: 0.9411765, a: 1}
 --- !u!4 &1047115544
 Transform:
   m_ObjectHideFlags: 0
@@ -965,7 +965,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 9448b3cd59385aa44a84d26e2a2e33a8, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 13e1e4ed702848c4498acb012b571a8d, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1202,7 +1202,7 @@ GameObject:
   - component: {fileID: 1351976449}
   - component: {fileID: 1351976448}
   m_Layer: 5
-  m_Name: Button (1)
+  m_Name: OtherOptions
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1224,7 +1224,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 280.1671, y: -350}
+  m_AnchoredPosition: {x: 382.54712, y: -350}
   m_SizeDelta: {x: 200, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1351976448
@@ -1266,7 +1266,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 1351976449}
   m_OnClick:
     m_PersistentCalls:
@@ -1820,7 +1820,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1047115543}
-        m_TargetAssemblyTypeName: Connect.Core.GameplayManager, Connect.Core
+        m_TargetAssemblyTypeName: Connect.Core.GameplayManager, Assembly-CSharp
         m_MethodName: ClickedRestart
         m_Mode: 1
         m_Arguments:
@@ -1937,7 +1937,7 @@ GameObject:
   - component: {fileID: 2078592563}
   - component: {fileID: 2078592562}
   m_Layer: 5
-  m_Name: Button (2)
+  m_Name: QitButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1959,7 +1959,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 280.1671, y: -600}
+  m_AnchoredPosition: {x: 382.54712, y: -600}
   m_SizeDelta: {x: 200, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2078592562
@@ -2005,7 +2005,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2078592563}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1047115543}
+        m_TargetAssemblyTypeName: Connect.Core.GameplayManager, Assembly-CSharp
+        m_MethodName: OnQuitButtonClicked
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2078592563
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2026,7 +2038,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: bdab724f3036e6948855849b8ae7c894, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e5d9fd27e7771f346b6d7b3d0ea7944d, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

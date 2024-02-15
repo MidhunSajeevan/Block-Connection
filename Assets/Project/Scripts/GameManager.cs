@@ -2,17 +2,24 @@ using Connect.Generator;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 namespace Connect.Core
 {
+    
     public class GameManager : MonoBehaviour
     {
         #region START_METHODS
+
+
+        private int currentLevel = 1;
 
         public static GameManager Instance;
 
         private void Awake()
         {
+            PlayerPrefs.SetInt("LastOpenedLevel", 1);
+            PlayerPrefs.Save();
             if (Instance == null)
             {
                 Instance = this;
@@ -24,6 +31,7 @@ namespace Connect.Core
             {
                 Destroy(gameObject);
             }
+
         }
 
         private void Init()
@@ -33,7 +41,7 @@ namespace Connect.Core
 
             Levels = new Dictionary<string, LevelData>();
 
-            foreach (var item in _allLevels.Levels)
+            foreach (var item in allLevels.Levels)
             {
                 Levels[item.LevelName] = item;
             }
@@ -84,7 +92,7 @@ namespace Connect.Core
                 if (CurrentStage == 8)
                 {
                     CurrentStage = 1;
-                    GoToMainMenu();
+                    OnMainMenuButtonClicked();
                 }
             }
 
@@ -100,13 +108,13 @@ namespace Connect.Core
         private LevelData DefaultLevel;
 
         [SerializeField]
-        private LevelList _allLevels;
+        private LevelList allLevels;
 
         private Dictionary<string, LevelData> Levels;
 
         public LevelData GetLevel()
         {
-            string levelName = "Level" + CurrentStage.ToString() + CurrentLevel.ToString();
+            string levelName = "Level1"+PlayerPrefs.GetInt("LastOpenedLevel");
 
             if (Levels.ContainsKey(levelName))
             {
@@ -120,17 +128,11 @@ namespace Connect.Core
 
         #region SCENE_LOAD
 
-        private const string MainMenu = "MainMenu";
-        private const string Gameplay = "Gameplay";
-
-        public void GoToMainMenu()
-        {
-            UnityEngine.SceneManagement.SceneManager.LoadScene(GameMenuStrings.MainMenu);
-        }
-
         public void GoToGameplay()
         {
-            UnityEngine.SceneManagement.SceneManager.LoadScene(Gameplay);
+             currentLevel++;
+            PlayerPrefs.SetInt("LastOpenedLevel", SceneManager.GetActiveScene().buildIndex + 1);
+            SceneManager.LoadScene(GameMenuStrings.AllLevel + 1.ToString());
         }
 
         #endregion
@@ -143,11 +145,15 @@ namespace Connect.Core
 
         public void OnPlayButtonClicked()
         {
-            SceneManager.LoadScene(GameMenuStrings.Level_1);
+            Time.timeScale = 1f;
+            SceneManager.LoadScene(GameMenuStrings.AllLevel+PlayerPrefs.GetInt("LastOpenedLevel").ToString());
         }
         public void LoadNextScene(int scene)
         {
-            SceneManager.LoadScene(GameMenuStrings.AllLevel + scene.ToString());
+            //currentLevel = scene;
+            //PlayerPrefs.SetInt("LastOpenedLevel", currentLevel);
+            //PlayerPrefs.Save();
+            //SceneManager.LoadScene(GameMenuStrings.AllLevel + 1.ToString());
         }
         #endregion
     }

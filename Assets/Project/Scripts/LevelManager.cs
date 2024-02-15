@@ -19,7 +19,6 @@ public class LevelManager : MonoBehaviour
     }
     public void OpenNewLevel(int levelId)
     {
-        Debug.Log("Button Clicked");
         string levelname = GameMenuStrings.AllLevel + levelId;
         SceneManager.LoadScene(levelname);
     }
