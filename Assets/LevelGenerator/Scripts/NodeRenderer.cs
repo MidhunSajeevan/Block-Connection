@@ -50,5 +50,5 @@ namespace Connect.Generator
             connectedNode.SetActive(true);
             connectedNode.GetComponent<SpriteRenderer>().color = NodeColors[colorId % NodeColors.Count];
         }
-    } 
+    }
 }

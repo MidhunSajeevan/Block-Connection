@@ -53,7 +53,7 @@ namespace Connect.Generator
         private void SpawnNodes()
         {
             nodeGrid = new Dictionary<Point, NodeRenderer>();
-            nodeArray = new NodeRenderer[levelSize,levelSize];
+            nodeArray = new NodeRenderer[levelSize, levelSize];
             Vector3 spawnPos;
             NodeRenderer spawnedNode;
 
@@ -65,7 +65,7 @@ namespace Connect.Generator
                     spawnedNode = Instantiate(_nodePrefab, spawnPos, Quaternion.identity);
                     spawnedNode.Init();
                     nodeGrid.Add(new Point(i, j), spawnedNode);
-                    nodeArray[i,j] = spawnedNode;
+                    nodeArray[i, j] = spawnedNode;
                     spawnedNode.gameObject.name = i.ToString() + j.ToString();
                 }
             }
@@ -234,26 +234,26 @@ namespace Connect.Generator
             {
                 for (int j = 0; j < levelSize; j++)
                 {
-                    nodeArray[i,j].Init();
+                    nodeArray[i, j].Init();
                     currentColor = grid[i, j];
                     numOfConnectedNodes = 0;
 
-                    if(currentColor != -1)
+                    if (currentColor != -1)
                     {
                         for (int p = 0; p < neighbourPoints.Length; p++)
                         {
-                            Point tempPoint = new Point(i,j) + neighbourPoints[p];
+                            Point tempPoint = new Point(i, j) + neighbourPoints[p];
 
-                            if(tempPoint.IsPointValid(levelSize) &&
-                                grid[tempPoint.x,tempPoint.y] == currentColor                                
+                            if (tempPoint.IsPointValid(levelSize) &&
+                                grid[tempPoint.x, tempPoint.y] == currentColor
                                 )
                             {
-                                nodeArray[i,j].SetEdge(currentColor, neighbourPoints[p]);
+                                nodeArray[i, j].SetEdge(currentColor, neighbourPoints[p]);
                                 numOfConnectedNodes++;
                             }
                         }
 
-                        if(numOfConnectedNodes <= 1)
+                        if (numOfConnectedNodes <= 1)
                         {
                             nodeArray[i, j].SetEdge(currentColor, Point.zero);
                         }
@@ -276,7 +276,7 @@ namespace Connect.Generator
         public int x;
         public int y;
 
-        public Point(int x,int y)
+        public Point(int x, int y)
         {
             this.x = x;
             this.y = y;
@@ -284,7 +284,7 @@ namespace Connect.Generator
 
         public bool IsPointValid(int maxCount)
         {
-            return x < maxCount && y < maxCount && x > -1 && y > -1;    
+            return x < maxCount && y < maxCount && x > -1 && y > -1;
         }
 
         public static Point operator +(Point p1, Point p2)
@@ -297,9 +297,9 @@ namespace Connect.Generator
             return new Point(p1.x - p2.x, p1.y - p2.y);
         }
 
-        public static Point up => new Point(0,1);
-        public static Point left => new Point(-1,0);
-        public static Point down => new Point(0,-1);
+        public static Point up => new Point(0, 1);
+        public static Point left => new Point(-1, 0);
+        public static Point down => new Point(0, -1);
         public static Point right => new Point(1, 0);
         public static Point zero => new Point(0, 0);
         public static bool operator ==(Point p1, Point p2) => p1.x == p2.x && p1.y == p2.y;
@@ -311,7 +311,7 @@ namespace Connect.Generator
         }
         public override int GetHashCode()
         {
-            return (100*x + y).GetHashCode();
+            return (100 * x + y).GetHashCode();
         }
 
     }

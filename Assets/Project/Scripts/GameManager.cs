@@ -130,7 +130,7 @@ namespace Connect.Core
 
         public void GoToGameplay()
         {
-             currentLevel++;
+            currentLevel++;
             PlayerPrefs.SetInt("LastOpenedLevel", currentLevel);
             SceneManager.LoadScene(GameMenuStrings.AllLevel + 1.ToString());
         }

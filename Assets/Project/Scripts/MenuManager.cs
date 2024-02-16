@@ -11,7 +11,7 @@ public class MenuManager : MonoBehaviour
     {
         instance = this;
     }
-
+    #region MENU OPENING CLOSING
     public void OpenMenu(string menuName)
     {
         foreach (var menu in menus)
@@ -41,4 +41,5 @@ public class MenuManager : MonoBehaviour
     {
         menu.Close();
     }
+    #endregion
 }
